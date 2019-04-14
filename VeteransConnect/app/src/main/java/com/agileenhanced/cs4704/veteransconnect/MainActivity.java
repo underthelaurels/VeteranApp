@@ -34,4 +34,6 @@ public class MainActivity extends AppCompatActivity
     {
         Toast.makeText(this.getApplicationContext(), "Clicked Events!", Toast.LENGTH_SHORT).show();
     }
+
+    // TODO: onBackPressed() might need to logout unless the user states they want to be remembered
 }
