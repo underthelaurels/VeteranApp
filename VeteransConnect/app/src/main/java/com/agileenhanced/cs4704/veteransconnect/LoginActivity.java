@@ -6,42 +6,63 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import android.content.Intent;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity
+{
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
 
-    @InjectView(R.id.input_email) EditText _emailText;
-    @InjectView(R.id.input_password) EditText _passwordText;
-    @InjectView(R.id.btn_login) Button _loginButton;
-    @InjectView(R.id.link_signup) TextView _signupLink;
+    @InjectView(R.id.input_username)
+    EditText _usernameText;
+    @InjectView(R.id.input_password)
+    EditText _passwordText;
+    @InjectView(R.id.btn_login)
+    Button _loginButton;
+    @InjectView(R.id.link_signup)
+    TextView _signupLink;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
 
-        _loginButton.setOnClickListener(new View.OnClickListener() {
+        _loginButton.setOnClickListener(new View.OnClickListener()
+        {
 
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 login();
             }
         });
 
-        _signupLink.setOnClickListener(new View.OnClickListener() {
+        _signupLink.setOnClickListener(new View.OnClickListener()
+        {
 
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 // Start the Signup activity
                 Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
@@ -49,10 +70,12 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void login() {
+    public void login()
+    {
         Log.d(TAG, "Login");
 
-        if (!validate()) {
+        if (!validate())
+        {
             onLoginFailed();
             return;
         }
@@ -65,27 +88,70 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        String email = _emailText.getText().toString();
-        String password = _passwordText.getText().toString();
+        final String username = _usernameText.getText().toString();
+        final String password = _passwordText.getText().toString();
 
         // TODO: Implement your own authentication logic here.
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "http://35.245.223.73/user/login";
 
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        // On complete call either onLoginSuccess or onLoginFailed
-                        onLoginSuccess();
-                        // onLoginFailed();
-                        progressDialog.dismiss();
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(final String response)
+                    {
+                        // Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+                        new android.os.Handler().postDelayed(
+                                new Runnable()
+                                {
+                                    public void run()
+                                    {
+                                        // On complete call either onLoginSuccess or onLoginFailed
+                                        if (response.contains("\"status\":\"success\""))
+                                        {
+                                            onLoginSuccess();
+                                        }
+                                        else
+                                        {
+                                            onLoginFailed();
+                                        }
+                                        progressDialog.dismiss();
+                                    }
+                                }, 1000);
                     }
-                }, 1000);
+                }, new Response.ErrorListener()
+        {
+            @Override
+            public void onErrorResponse(VolleyError error)
+            {
+                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                onLoginFailed();
+            }
+        })
+        {
+            protected Map<String, String> getParams()
+            {
+                Map<String, String> MyData = new HashMap<String, String>();
+                MyData.put("username", username);
+                MyData.put("password", password);
+                return MyData;
+            }
+        };
+
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
     }
 
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_SIGNUP) {
-            if (resultCode == RESULT_OK) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (requestCode == REQUEST_SIGNUP)
+        {
+            if (resultCode == RESULT_OK)
+            {
 
                 // TODO: Implement successful signup logic here (Need to change this bc it exits the app currently)
                 // By default we just finish the Activity and log them in automatically
@@ -95,40 +161,48 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         // disable going back to the MainActivity
         moveTaskToBack(true);
     }
 
-    public void onLoginSuccess() {
+    public void onLoginSuccess()
+    {
         _loginButton.setEnabled(true);
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        // finish();
+        // this.finish();
     }
 
-    public void onLoginFailed() {
+    public void onLoginFailed()
+    {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
 
         _loginButton.setEnabled(true);
     }
 
-    public boolean validate() {
+    public boolean validate()
+    {
         boolean valid = true;
 
-        String email = _emailText.getText().toString();
+        String username = _usernameText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            _emailText.setError("enter a valid email address");
+        if (username.isEmpty())
+        {
+            _usernameText.setError("enter a valid username");
             valid = false;
-        } else {
-            _emailText.setError(null);
+        } else
+        {
+            _usernameText.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
+        if (password.isEmpty() || password.length() < 4 || password.length() > 10)
+        {
             _passwordText.setError("between 4 and 10 alphanumeric characters");
             valid = false;
-        } else {
+        } else
+        {
             _passwordText.setError(null);
         }
 
