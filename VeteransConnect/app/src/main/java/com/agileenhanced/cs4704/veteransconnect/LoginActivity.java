@@ -82,16 +82,20 @@ public class LoginActivity extends AppCompatActivity
 
         _loginButton.setEnabled(false);
 
+        String username = _usernameText.getText().toString();
+        String password = _passwordText.getText().toString();
+
+        sendLoginRequest(username, password);
+    }
+
+    private void sendLoginRequest(final String username, final String password)
+    {
         final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this,
                 R.style.Theme_AppCompat_DayNight_NoActionBar);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        final String username = _usernameText.getText().toString();
-        final String password = _passwordText.getText().toString();
-
-        // TODO: Implement your own authentication logic here.
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "http://35.245.223.73/user/login";
 
@@ -111,6 +115,7 @@ public class LoginActivity extends AppCompatActivity
                                         // On complete call either onLoginSuccess or onLoginFailed
                                         if (response.contains("\"status\":\"success\""))
                                         {
+                                            Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
                                             onLoginSuccess();
                                         }
                                         else
@@ -126,7 +131,7 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onErrorResponse(VolleyError error)
             {
-                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                // Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                 onLoginFailed();
             }
         })
@@ -152,10 +157,9 @@ public class LoginActivity extends AppCompatActivity
         {
             if (resultCode == RESULT_OK)
             {
-
-                // TODO: Implement successful signup logic here (Need to change this bc it exits the app currently)
-                // By default we just finish the Activity and log them in automatically
-                this.finish();
+                String username = data.getStringExtra("username");
+                String password = data.getStringExtra("password");
+                sendLoginRequest(username, password);
             }
         }
     }
