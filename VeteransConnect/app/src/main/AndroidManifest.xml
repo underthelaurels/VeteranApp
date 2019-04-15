@@ -34,6 +34,7 @@
         <activity android:name=".EmploymentResultsActivity"></activity>
         <activity android:name=".VolunteeringActivity"></activity>
         <activity android:name=".VolunteeringResultsActivity"></activity>
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>
