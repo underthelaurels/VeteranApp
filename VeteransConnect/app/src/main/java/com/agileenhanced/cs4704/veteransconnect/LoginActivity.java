@@ -1,6 +1,7 @@
 package com.agileenhanced.cs4704.veteransconnect;
 
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.content.Intent;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +32,8 @@ public class LoginActivity extends AppCompatActivity
 {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
+    private SharedPreferences myPrefs;
+    private static final String PREFS_NAME = "PrefsFile";
 
     @InjectView(R.id.input_username)
     EditText _usernameText;
@@ -40,12 +44,15 @@ public class LoginActivity extends AppCompatActivity
     @InjectView(R.id.link_signup)
     TextView _signupLink;
 
+    private CheckBox rememberMe;
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
+
+        rememberMe = (CheckBox) findViewById(R.id.checkBox_rememberMe);
 
         _loginButton.setOnClickListener(new View.OnClickListener()
         {
@@ -68,6 +75,7 @@ public class LoginActivity extends AppCompatActivity
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
+        myPrefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
     }
 
     public void login()
@@ -81,6 +89,7 @@ public class LoginActivity extends AppCompatActivity
         }
 
         _loginButton.setEnabled(false);
+
 
         String username = _usernameText.getText().toString();
         String password = _passwordText.getText().toString();
@@ -185,31 +194,55 @@ public class LoginActivity extends AppCompatActivity
         _loginButton.setEnabled(true);
     }
 
-    public boolean validate()
-    {
+    private void getPreferencesData() {
+        SharedPreferences sp = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        if (sp.contains("pref_name")) {
+            String u = sp.getString("pref_name", "not found.");
+            _usernameText.setText(u.toString());
+        }
+        if (sp.contains("pref_pass")) {
+            String p = sp.getString("pref_pass", "not found.");
+            _passwordText.setText(p.toString());
+        }
+        if (sp.contains("pref_check")) {
+            Boolean b = sp.getBoolean("pref_check", false);
+            rememberMe.setChecked(b);
+        }
+    }
+
+    public boolean validate() {
         boolean valid = true;
 
         String username = _usernameText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        if (username.isEmpty())
-        {
+        if (username.isEmpty()) {
             _usernameText.setError("enter a valid username");
             valid = false;
-        } else
-        {
+        } else {
             _usernameText.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10)
-        {
+        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
             _passwordText.setError("between 4 and 10 alphanumeric characters");
             valid = false;
-        } else
-        {
+        } else {
             _passwordText.setError(null);
         }
 
+        getPreferencesData();
+        if (rememberMe.isChecked()) {
+            Boolean isChecked = rememberMe.isChecked();
+            SharedPreferences.Editor editor = myPrefs.edit();
+            editor.putString("pref_name", _usernameText.getText().toString());
+            editor.putString("pref_pass", _passwordText.getText().toString());
+            editor.putBoolean("pref_check", isChecked);
+            editor.apply();
+            Toast.makeText(getApplicationContext(), "Settings Have been saved.",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            myPrefs.edit().clear().apply();
+        }
         return valid;
     }
 }

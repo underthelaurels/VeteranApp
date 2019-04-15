@@ -43,6 +43,12 @@
                 android:hint="Password"/>
         </android.support.design.widget.TextInputLayout>
 
+        <CheckBox
+            android:id="@+id/checkBox_rememberMe"
+            android:layout_width="141dp"
+            android:layout_height="wrap_content"
+            android:text="Remember Me?" />
+
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_login"
             android:layout_width="fill_parent"

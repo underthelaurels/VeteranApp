@@ -1,5 +1,6 @@
 package com.agileenhanced.cs4704.veteransconnect;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,12 +23,14 @@ public class MainActivity extends AppCompatActivity
 
     public void onClickEmployment(View v)
     {
-        Toast.makeText(this.getApplicationContext(), "Clicked Employment!", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this.getApplicationContext(), "Clicked Employment!", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), EmploymentOrVolunteeringActivity.class));
     }
 
     public void onClickDiscounts(View v)
     {
-        Toast.makeText(this.getApplicationContext(), "Clicked Discounts!", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this.getApplicationContext(), "Clicked Discounts!", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), DiscountActivity.class));
     }
 
     public void onClickEvents(View v)
