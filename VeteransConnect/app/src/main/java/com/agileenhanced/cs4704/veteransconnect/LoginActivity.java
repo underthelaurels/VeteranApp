@@ -128,9 +128,22 @@ public class LoginActivity extends AppCompatActivity
                                         if (response.contains("\"status\":\"success\""))
                                         {
                                             // Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
-                                            onLoginSuccess();
-                                        }
-                                        else
+
+                                            // Save the user data if it was correct.
+                                            if (rememberMe.isChecked())
+                                            {
+                                                Boolean isChecked = rememberMe.isChecked();
+                                                SharedPreferences.Editor editor = myPrefs.edit();
+                                                editor.putString("pref_name", _usernameText.getText().toString());
+                                                editor.putString("pref_pass", _passwordText.getText().toString());
+                                                editor.putBoolean("pref_check", isChecked);
+                                                editor.apply();
+                                            } else
+                                            {
+                                                myPrefs.edit().clear().apply();
+                                            }
+                                            onLoginSuccess(username);
+                                        } else
                                         {
                                             onLoginFailed();
                                         }
@@ -183,11 +196,13 @@ public class LoginActivity extends AppCompatActivity
         moveTaskToBack(true);
     }
 
-    public void onLoginSuccess()
+    public void onLoginSuccess(String username)
     {
         _loginButton.setEnabled(true);
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-        // this.finish();
+        // Send the user name to the main activity so we can log them out.
+        Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
+        mainIntent.putExtra("USER_NAME", username);
+        startActivity(mainIntent);
     }
 
     public void onLoginFailed()
@@ -197,60 +212,57 @@ public class LoginActivity extends AppCompatActivity
         _loginButton.setEnabled(true);
     }
 
-    private void getPreferencesData() {
+    private void getPreferencesData()
+    {
         SharedPreferences sp = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        if (sp.contains("pref_name")) {
+        if (sp.contains("pref_name"))
+        {
             String u = sp.getString("pref_name", "not found.");
             if (!u.equals("not found."))
             {
                 _usernameText.setText(u.toString());
             }
         }
-        if (sp.contains("pref_pass")) {
+        if (sp.contains("pref_pass"))
+        {
             String p = sp.getString("pref_pass", "not found.");
             if (!p.equals("not found."))
             {
                 _passwordText.setText(p.toString());
             }
         }
-        if (sp.contains("pref_check")) {
+        if (sp.contains("pref_check"))
+        {
             Boolean b = sp.getBoolean("pref_check", false);
             rememberMe.setChecked(b);
         }
     }
 
-    public boolean validate() {
+    public boolean validate()
+    {
         boolean valid = true;
 
         String username = _usernameText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        if (username.isEmpty()) {
+        if (username.isEmpty())
+        {
             _usernameText.setError("enter a valid username");
             valid = false;
-        } else {
+        } else
+        {
             _usernameText.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
+        if (password.isEmpty() || password.length() < 4 || password.length() > 10)
+        {
             _passwordText.setError("between 4 and 10 alphanumeric characters");
             valid = false;
-        } else {
+        } else
+        {
             _passwordText.setError(null);
         }
 
-        if (rememberMe.isChecked()) {
-            Boolean isChecked = rememberMe.isChecked();
-            SharedPreferences.Editor editor = myPrefs.edit();
-            editor.putString("pref_name", _usernameText.getText().toString());
-            editor.putString("pref_pass", _passwordText.getText().toString());
-            editor.putBoolean("pref_check", isChecked);
-            editor.apply();
-            Toast.makeText(getApplicationContext(), "Settings Have been saved.",
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            myPrefs.edit().clear().apply();
-        }
         return valid;
     }
 }
