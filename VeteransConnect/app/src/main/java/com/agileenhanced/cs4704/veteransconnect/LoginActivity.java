@@ -141,6 +141,8 @@ public class LoginActivity extends AppCompatActivity
                                             } else
                                             {
                                                 myPrefs.edit().clear().apply();
+                                                _usernameText.setText("");
+                                                _passwordText.setText("");
                                             }
                                             onLoginSuccess(username);
                                         } else
