@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity
     TextView _signupLink;
 
     private CheckBox rememberMe;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -75,7 +76,9 @@ public class LoginActivity extends AppCompatActivity
                 startActivityForResult(intent, REQUEST_SIGNUP);
             }
         });
+
         myPrefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        getPreferencesData();
     }
 
     public void login()
@@ -198,11 +201,17 @@ public class LoginActivity extends AppCompatActivity
         SharedPreferences sp = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         if (sp.contains("pref_name")) {
             String u = sp.getString("pref_name", "not found.");
-            _usernameText.setText(u.toString());
+            if (!u.equals("not found."))
+            {
+                _usernameText.setText(u.toString());
+            }
         }
         if (sp.contains("pref_pass")) {
             String p = sp.getString("pref_pass", "not found.");
-            _passwordText.setText(p.toString());
+            if (!p.equals("not found."))
+            {
+                _passwordText.setText(p.toString());
+            }
         }
         if (sp.contains("pref_check")) {
             Boolean b = sp.getBoolean("pref_check", false);
@@ -230,7 +239,6 @@ public class LoginActivity extends AppCompatActivity
             _passwordText.setError(null);
         }
 
-        getPreferencesData();
         if (rememberMe.isChecked()) {
             Boolean isChecked = rememberMe.isChecked();
             SharedPreferences.Editor editor = myPrefs.edit();
