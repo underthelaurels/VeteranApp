@@ -6,6 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity
 {
 
@@ -39,5 +49,46 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(this.getApplicationContext(), "Clicked Events!", Toast.LENGTH_SHORT).show();
     }
 
-    // TODO: onBackPressed() might need to logout unless the user states they want to be remembered
+    @Override
+    public void onBackPressed()
+    {
+        sendLogoutRequest();
+        super.onBackPressed();
+    }
+
+    // Used to log the user out when they go back from the main screen to the login activity
+    private void sendLogoutRequest()
+    {
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "http://35.245.223.73/user/logout";
+
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(final String response)
+                    {
+                        Toast.makeText(getApplicationContext(), "Log-out Successful", Toast.LENGTH_SHORT).show();
+                    }
+                }, new Response.ErrorListener()
+        {
+            @Override
+            public void onErrorResponse(VolleyError error)
+            {
+                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        })
+        {
+            protected Map<String, String> getParams()
+            {
+                Map<String, String> MyData = new HashMap<String, String>();
+                MyData.put("username", getIntent().getStringExtra("USER_NAME"));
+                return MyData;
+            }
+        };
+
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
+    }
 }
