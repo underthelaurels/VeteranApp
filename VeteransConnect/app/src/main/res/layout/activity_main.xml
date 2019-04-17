@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Veterans Connect"
+        android:text="Veteran Connect"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="22dp"
         android:textStyle="bold"
@@ -56,7 +56,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="8dp"
-                            android:text="Veterans Connect"
+                            android:text="Veteran Connect"
                             android:textColor="#222"
                             android:textSize="22dp"
                             android:textStyle="bold" />
