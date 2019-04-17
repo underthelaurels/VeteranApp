@@ -124,7 +124,7 @@ public class LoginActivity extends AppCompatActivity
                                         // On complete call either onLoginSuccess or onLoginFailed
                                         if (response.contains("\"status\":\"success\""))
                                         {
-                                            Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+                                            // Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
                                             onLoginSuccess();
                                         }
                                         else

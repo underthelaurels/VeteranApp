@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -21,18 +22,26 @@ import java.util.Random;
 
 public class ChatActivity extends AppCompatActivity implements RoomListener
 {
-    private String channelID = "0iAgd2gcNwqRffSn";
-    private String roomName = "observable-room";
+    private String channelID;
+    private String roomName = "observable-";
+    private TextView roomNameText;
     private EditText editText;
     private Scaledrone scaledrone;
     private ListView messagesView;
     private MessageAdapter messageAdapter;
+
+    private final String CHANNEL_ID = "channel_id";
+    private final String ROOM_NAME = "room_name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+        roomNameText = (TextView) findViewById(R.id.chat_name);
+        roomNameText.setText(getIntent().getStringExtra(ROOM_NAME));
+        roomName = roomName + getIntent().getStringExtra(ROOM_NAME);
+        channelID = getIntent().getStringExtra(CHANNEL_ID);
         // This is where we write the message
         editText = (EditText) findViewById(R.id.editText);
         messagesView = (ListView) findViewById(R.id.messages_view);
@@ -142,7 +151,7 @@ public class ChatActivity extends AppCompatActivity implements RoomListener
         String message = editText.getText().toString();
         if (message.length() > 0)
         {
-            scaledrone.publish("observable-room", message);
+            scaledrone.publish(roomName, message);
             editText.getText().clear();
         }
     }

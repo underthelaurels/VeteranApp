@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity
     public void onClickVetConnect(View v)
     {
         //Toast.makeText(this.getApplicationContext(), "Clicked VetConnect!", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getApplicationContext(), ChatActivity.class));
+        startActivity(new Intent(getApplicationContext(), ChatSelection.class));
     }
 
     public void onClickEmployment(View v)
