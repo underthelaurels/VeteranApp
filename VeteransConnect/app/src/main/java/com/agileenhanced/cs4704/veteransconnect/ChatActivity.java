@@ -29,10 +29,8 @@ public class ChatActivity extends AppCompatActivity implements RoomListener
     private Scaledrone scaledrone;
     private ListView messagesView;
     private MessageAdapter messageAdapter;
-
     private final String CHANNEL_ID = "channel_id";
     private final String ROOM_NAME = "room_name";
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
