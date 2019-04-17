@@ -49,6 +49,16 @@ public class MainActivity extends AppCompatActivity
         Toast.makeText(this.getApplicationContext(), "Clicked Events!", Toast.LENGTH_SHORT).show();
     }
 
+    public void onClickBenefits(View v)
+    {
+        Toast.makeText(this.getApplicationContext(), "Clicked Benefits!", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onClickStory(View v)
+    {
+        Toast.makeText(this.getApplicationContext(), "Clicked Story!", Toast.LENGTH_SHORT).show();
+    }
+
     @Override
     public void onBackPressed()
     {

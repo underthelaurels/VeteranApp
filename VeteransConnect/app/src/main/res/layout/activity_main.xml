@@ -34,7 +34,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:minHeight="320dp"
+                    android:minHeight="280dp"
                     android:onClick="onClickVetConnect"
                     android:padding="12dp"
                     app:cardCornerRadius="8dp"
@@ -59,16 +59,17 @@
                             android:text="Veteran Connect"
                             android:textColor="#222"
                             android:textSize="22dp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:layout_gravity="center_horizontal"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/titleCard1"
                             android:padding="8dp"
                             android:text="Connect and chat with other veterans"
                             android:textColor="#666"
-                            android:textSize="14dp" />
+                            android:textSize="14dp"/>
 
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -78,7 +79,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:minHeight="320dp"
+                    android:minHeight="280dp"
                     android:onClick="onClickEmployment"
                     android:padding="12dp"
                     app:cardCornerRadius="8dp"
@@ -100,17 +101,18 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="8dp"
-                            android:text="Employment and Volunteering"
+                            android:text="Employment"
                             android:textColor="#222"
                             android:textSize="22dp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:layout_gravity="center_horizontal"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/titleCard2"
                             android:padding="8dp"
-                            android:text="Search for job postings from companies specifically looking for veterans"
+                            android:text="Find employment and volunteering opportunities specifically available to you"
                             android:textColor="#666"
                             android:textSize="14dp" />
 
@@ -126,7 +128,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:minHeight="320dp"
+                    android:minHeight="280dp"
                     android:onClick="onClickDiscounts"
                     android:padding="12dp"
                     app:cardCornerRadius="8dp"
@@ -151,12 +153,13 @@
                             android:text="Discounts"
                             android:textColor="#222"
                             android:textSize="22dp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:layout_gravity="center_horizontal"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/titleCard3"
                             android:padding="8dp"
                             android:text="Search for companies offering discounts to veterans"
                             android:textColor="#666"
@@ -170,7 +173,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:minHeight="320dp"
+                    android:minHeight="280dp"
                     android:onClick="onClickEvents"
                     android:padding="12dp"
                     app:cardCornerRadius="8dp"
@@ -195,16 +198,111 @@
                             android:text="Events"
                             android:textColor="#222"
                             android:textSize="22dp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:layout_gravity="center_horizontal"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/titleCard4"
                             android:padding="8dp"
                             android:text="Find local events that you and other veterans can volunteer or take part in"
                             android:textColor="#666"
-                            android:textSize="14dp" />
+                            android:textSize="14dp"/>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </TableRow>
+
+            <TableRow>
+
+                <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/card_Benefits"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:minHeight="280dp"
+                    android:onClick="onClickBenefits"
+                    android:padding="12dp"
+                    app:cardCornerRadius="8dp"
+                    android:elevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/benefits" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:text="Benefits"
+                            android:textColor="#222"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:layout_gravity="center_horizontal"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:text="Learn about benefits that are available to you as a veteran"
+                            android:textColor="#666"
+                            android:textSize="14dp"/>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/card_Story"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:minHeight="280dp"
+                    android:onClick="onClickStory"
+                    android:padding="12dp"
+                    app:cardCornerRadius="8dp"
+                    android:elevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/story" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:text="Tell Your Story"
+                            android:textColor="#222"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:layout_gravity="center_horizontal"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="8dp"
+                            android:text="Share your story and tell others about who you are"
+                            android:textColor="#666"
+                            android:textSize="14dp"/>
 
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
