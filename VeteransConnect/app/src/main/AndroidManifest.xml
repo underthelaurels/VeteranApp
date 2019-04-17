@@ -26,14 +26,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity"></activity>
-        <activity android:name=".EmploymentActivity"></activity>
-        <activity android:name=".DiscountActivity"></activity>
-        <activity android:name=".DiscountResultsActivity"></activity>
-        <activity android:name=".EmploymentOrVolunteeringActivity"></activity>
-        <activity android:name=".EmploymentResultsActivity"></activity>
-        <activity android:name=".VolunteeringActivity"></activity>
-        <activity android:name=".VolunteeringResultsActivity"></activity>
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".EmploymentActivity" />
+        <activity android:name=".DiscountActivity" />
+        <activity android:name=".DiscountResultsActivity" />
+        <activity android:name=".EmploymentOrVolunteeringActivity" />
+        <activity android:name=".EmploymentResultsActivity" />
+        <activity android:name=".VolunteeringActivity" />
+        <activity android:name=".VolunteeringResultsActivity" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".ChatSelection"></activity>
     </application>
 
 </manifest>
