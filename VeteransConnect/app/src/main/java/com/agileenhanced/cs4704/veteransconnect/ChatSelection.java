@@ -22,12 +22,20 @@ public class ChatSelection extends AppCompatActivity
         setContentView(R.layout.activity_chat_selection);
         chatsList = (ListView) findViewById(R.id.chats_list);
 
+        // Static list of chat rooms that are available.
+        // Dynamically adding new chat rooms is a feature we would like to add.
         chatRooms = new ChatRoom[] {
                 new ChatRoom("General Chat", "0iAgd2gcNwqRffSn"),
-                new ChatRoom("Disabilities", "jb8BAgl3r9ckiAmf")
+                new ChatRoom("Disabilities", "jb8BAgl3r9ckiAmf"),
+                new ChatRoom("Education", "TwgCrzNIzk8BJ33S"),
+                new ChatRoom("Army Chat", "xT3nUf9TQgfkHia5"),
+                new ChatRoom("Navy Chat", "Xj3B3ycXFzruMA7i"),
+                new ChatRoom("Marine Corps Chat", "ymYwUWQvEsvYxJiM"),
+                new ChatRoom("Air Force Chat", "cJ41qBI49psgQv7T"),
+                new ChatRoom("Coast Guard", "CS46sqZeEyjfWr4W")
                     };
 
-        String[] chatRoomNames = new String[] {"General Chat", "Disabilities"};
+        String[] chatRoomNames = new String[] {"General Chat", "Disabilities", "Education", "Army Chat", "Navy Chat", "Marine Corps Chat", "Air Force Chat", "Coast Guard Chat"};
         ArrayAdapter<String> itemsAdapter =
                 new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, chatRoomNames);
         chatsList.setAdapter(itemsAdapter);

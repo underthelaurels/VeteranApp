@@ -24,40 +24,54 @@ import java.util.Map;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class SignupActivity extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity
+{
     private static final String TAG = "SignupActivity";
 
-    @InjectView(R.id.input_name) EditText _nameText;
-    @InjectView(R.id.input_password) EditText _passwordText;
-    @InjectView(R.id.btn_signup) Button _signupButton;
-    @InjectView(R.id.link_login) TextView _loginLink;
+    @InjectView(R.id.input_name)
+    EditText _nameText;
+    @InjectView(R.id.input_password)
+    EditText _passwordText;
+    @InjectView(R.id.input_confirm)
+    EditText _confirmPassText;
+    @InjectView(R.id.btn_signup)
+    Button _signupButton;
+    @InjectView(R.id.link_login)
+    TextView _loginLink;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         ButterKnife.inject(this);
 
-        _signupButton.setOnClickListener(new View.OnClickListener() {
+        _signupButton.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 signup();
             }
         });
 
-        _loginLink.setOnClickListener(new View.OnClickListener() {
+        _loginLink.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 // Finish the registration screen and return to the Login activity
                 finish();
             }
         });
     }
 
-    public void signup() {
+    public void signup()
+    {
         Log.d(TAG, "Signup");
 
-        if (!validate()) {
+        if (!validate())
+        {
             onSignupFailed();
             return;
         }
@@ -93,8 +107,7 @@ public class SignupActivity extends AppCompatActivity {
                                         if (response.contains("\"status\":\"success\""))
                                         {
                                             onSignupSuccess(username, password);
-                                        }
-                                        else
+                                        } else
                                         {
                                             onSignupFailed();
                                         }
@@ -126,7 +139,8 @@ public class SignupActivity extends AppCompatActivity {
     }
 
 
-    public void onSignupSuccess(String username, String password) {
+    public void onSignupSuccess(String username, String password)
+    {
         Toast.makeText(getBaseContext(), "Signup successful!", Toast.LENGTH_LONG).show();
         _signupButton.setEnabled(true);
         Intent resultIntent = new Intent();
@@ -136,30 +150,46 @@ public class SignupActivity extends AppCompatActivity {
         finish();
     }
 
-    public void onSignupFailed() {
+    public void onSignupFailed()
+    {
         Toast.makeText(getBaseContext(), "Signup failed", Toast.LENGTH_LONG).show();
         setResult(RESULT_CANCELED, null);
         _signupButton.setEnabled(true);
     }
 
-    public boolean validate() {
+    public boolean validate()
+    {
         boolean valid = true;
 
         String username = _nameText.getText().toString();
         String password = _passwordText.getText().toString();
+        String confirm = _confirmPassText.getText().toString();
 
-        if (username.isEmpty() || username.length() < 3) {
+        if (username.isEmpty() || username.length() < 3)
+        {
             _nameText.setError("at least 3 characters");
             valid = false;
-        } else {
+        } else
+        {
             _nameText.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
+        if (password.isEmpty() || password.length() < 4 || password.length() > 10)
+        {
             _passwordText.setError("between 4 and 10 alphanumeric characters");
             valid = false;
-        } else {
+        } else
+        {
             _passwordText.setError(null);
+        }
+
+        if (!confirm.equals(password))
+        {
+            _confirmPassText.setError("must match above password");
+            valid = false;
+        } else
+        {
+            _confirmPassText.setError(null);
         }
 
         return valid;
