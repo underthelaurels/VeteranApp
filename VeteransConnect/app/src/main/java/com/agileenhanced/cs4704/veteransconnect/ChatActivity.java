@@ -12,15 +12,18 @@ import android.widget.TextView;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.scaledrone.lib.HistoryRoomListener;
 import com.scaledrone.lib.Listener;
 import com.scaledrone.lib.Member;
 import com.scaledrone.lib.Room;
 import com.scaledrone.lib.RoomListener;
 import com.scaledrone.lib.Scaledrone;
+import com.scaledrone.lib.SubscribeOptions;
 
+import java.util.HashMap;
 import java.util.Random;
 
-public class ChatActivity extends AppCompatActivity implements RoomListener
+public class ChatActivity extends AppCompatActivity implements RoomListener, HistoryRoomListener
 {
     private String channelID;
     private String roomName = "observable-";
@@ -31,6 +34,9 @@ public class ChatActivity extends AppCompatActivity implements RoomListener
     private MessageAdapter messageAdapter;
     private final String CHANNEL_ID = "channel_id";
     private final String ROOM_NAME = "room_name";
+
+    HashMap<String, MemberData> memberDataHashMap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -48,6 +54,7 @@ public class ChatActivity extends AppCompatActivity implements RoomListener
         messagesView.setAdapter(messageAdapter);
 
         MemberData data = new MemberData(getRandomName(), getRandomColor());
+        memberDataHashMap = new HashMap<>();
 
         scaledrone = new Scaledrone(channelID, data);
         scaledrone.connect(new Listener()
@@ -57,7 +64,9 @@ public class ChatActivity extends AppCompatActivity implements RoomListener
             {
                 System.out.println("Scaledrone connection open");
                 // Since the MainActivity itself already implement RoomListener we can pass it as a target
-                scaledrone.subscribe(roomName, ChatActivity.this);
+                scaledrone.subscribe(roomName,ChatActivity.this,
+                        new SubscribeOptions(50))
+                        .listenToHistoryEvents(ChatActivity.this);
             }
 
             @Override
@@ -114,6 +123,34 @@ public class ChatActivity extends AppCompatActivity implements RoomListener
     public void onOpenFailure(Room room, Exception ex)
     {
         System.err.println(ex);
+    }
+
+    @Override
+    public void onHistoryMessage(Room room, com.scaledrone.lib.Message receivedMessage)
+    {
+        MemberData data;
+        if (memberDataHashMap.containsKey(receivedMessage.getClientID()))
+        {
+            data = memberDataHashMap.get(receivedMessage.getClientID());
+        }
+        else
+        {
+            data = new MemberData(getRandomName(), getRandomColor());
+            memberDataHashMap.put(receivedMessage.getClientID(), data);
+        }
+        // if the clientID of the message sender is the same as our's it was sent by us
+        boolean belongsToCurrentUser = receivedMessage.getClientID().equals(scaledrone.getClientID());
+        // since the message body is a simple string in our case we can use json.asText() to parse it as such
+        // if it was instead an object we could use a similar pattern to data parsing
+        final Message message = new Message(receivedMessage.getData().asText(), data, belongsToCurrentUser);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                messageAdapter.add(message);
+                // scroll the ListView to the last added element
+                messagesView.setSelection(messagesView.getCount() - 1);
+            }
+        });
     }
 
     // Received a message from Scaledrone room
