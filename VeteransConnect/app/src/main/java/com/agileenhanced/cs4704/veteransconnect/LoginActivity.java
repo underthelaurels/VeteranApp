@@ -129,21 +129,23 @@ public class LoginActivity extends AppCompatActivity
                                         {
                                             // Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
 
+                                            SharedPreferences.Editor editor = myPrefs.edit();
                                             // Save the user data if it was correct.
                                             if (rememberMe.isChecked())
                                             {
                                                 Boolean isChecked = rememberMe.isChecked();
-                                                SharedPreferences.Editor editor = myPrefs.edit();
                                                 editor.putString("pref_name", _usernameText.getText().toString());
                                                 editor.putString("pref_pass", _passwordText.getText().toString());
                                                 editor.putBoolean("pref_check", isChecked);
-                                                editor.apply();
                                             } else
                                             {
                                                 myPrefs.edit().clear().apply();
+                                                // Save at least the user name for uniquely identifying users in chat
+                                                editor.putString("pref_name", _usernameText.getText().toString());
                                                 _usernameText.setText("");
                                                 _passwordText.setText("");
                                             }
+                                            editor.apply();
                                             onLoginSuccess(username);
                                         } else
                                         {
@@ -217,26 +219,31 @@ public class LoginActivity extends AppCompatActivity
     private void getPreferencesData()
     {
         SharedPreferences sp = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        if (sp.contains("pref_name"))
-        {
-            String u = sp.getString("pref_name", "not found.");
-            if (!u.equals("not found."))
-            {
-                _usernameText.setText(u.toString());
-            }
-        }
-        if (sp.contains("pref_pass"))
-        {
-            String p = sp.getString("pref_pass", "not found.");
-            if (!p.equals("not found."))
-            {
-                _passwordText.setText(p.toString());
-            }
-        }
         if (sp.contains("pref_check"))
         {
             Boolean b = sp.getBoolean("pref_check", false);
             rememberMe.setChecked(b);
+            if (sp.contains("pref_name"))
+            {
+                String u = sp.getString("pref_name", "not found.");
+                if (!u.equals("not found."))
+                {
+                    _usernameText.setText(u.toString());
+                }
+            }
+            if (sp.contains("pref_pass"))
+            {
+                String p = sp.getString("pref_pass", "not found.");
+                if (!p.equals("not found."))
+                {
+                    _passwordText.setText(p.toString());
+                }
+            }
+        }
+        else
+        {
+            _usernameText.setText("");
+            _passwordText.setText("");
         }
     }
 
