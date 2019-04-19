@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -45,16 +47,16 @@ public class ChatActivity extends AppCompatActivity implements RoomListener
     private EditText editText;
     private Scaledrone scaledrone;
     private ListView messagesView;
+    private CheckBox checkAnonymous;
     private MessageAdapter messageAdapter;
     private MemberData data;
+    private SharedPreferences sp;
     private final String CHANNEL_ID = "channel_id";
     private final String ROOM_NAME = "room_name";
     private final String PREFERENCES = "PrefsFile";
     private final String USER_NAME = "pref_name";
     private final String USER_COLOR = "sender_color";
     private RequestQueue queue;
-
-    HashMap<String, MemberData> memberDataHashMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -65,6 +67,7 @@ public class ChatActivity extends AppCompatActivity implements RoomListener
         roomNameText.setText(getIntent().getStringExtra(ROOM_NAME));
         roomName = roomName + getIntent().getStringExtra(ROOM_NAME);
         channelID = getIntent().getStringExtra(CHANNEL_ID);
+
         // This is where we write the message
         editText = (EditText) findViewById(R.id.editText);
         messagesView = (ListView) findViewById(R.id.messages_view);
@@ -72,13 +75,25 @@ public class ChatActivity extends AppCompatActivity implements RoomListener
         messageAdapter = new MessageAdapter(this);
         messagesView.setAdapter(messageAdapter);
 
-        SharedPreferences sp = getSharedPreferences(PREFERENCES, MODE_PRIVATE);
+        sp = getSharedPreferences(PREFERENCES, MODE_PRIVATE);
         if (sp.getString(USER_COLOR, "").equals(""))
         {
             sp.edit().putString(USER_COLOR, getRandomColor()).commit();
         }
         data = new MemberData(sp.getString(USER_NAME, getRandomName()),
                 sp.getString(USER_COLOR, getRandomColor()));
+
+        checkAnonymous = (CheckBox) findViewById(R.id.check_anonymous);
+        checkAnonymous.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked)
+            {
+                data = (isChecked) ? new MemberData(getRandomName(), getRandomColor()) :
+                        new MemberData(sp.getString(USER_NAME, getRandomName()), sp.getString(USER_COLOR, getRandomColor()));
+
+            }
+        });
 
         queue = Volley.newRequestQueue(this);
 
@@ -250,7 +265,6 @@ public class ChatActivity extends AppCompatActivity implements RoomListener
                         try
                         {
                             // Toast.makeText(getApplicationContext(), response.toString(4), Toast.LENGTH_LONG).show();
-                            // TODO: figure out how to parse JSON and add the messages to the messageAdapter
                             JSONArray messageHistory = (JSONArray) response.get("messages");
                             for (int i = 0; i < messageHistory.length(); i++)
                             {

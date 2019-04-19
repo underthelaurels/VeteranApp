@@ -9,19 +9,32 @@
     tools:context=".ChatActivity">
 
     <TextView
+        android:id="@+id/chat_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="24dp"
         android:padding="8dp"
-        android:id="@+id/chat_name"
-        android:textColor="@color/colorPrimaryDark"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="22dp"
-        android:elevation="12dp" />
+        android:textStyle="bold"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/check_anonymous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:elevation="24dp"
+        android:padding="8dp"
+        android:text="Post Anonymously?"
+        android:textColor="@color/colorPrimaryDark" />
+
     <ListView
         android:id="@+id/messages_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
+        android:background="#EEEEEE"
         android:divider="#fff" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
