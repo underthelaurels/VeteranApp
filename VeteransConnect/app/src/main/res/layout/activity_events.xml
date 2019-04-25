@@ -35,6 +35,7 @@
         android:layout_weight="2"
         android:background="#EEEEEE"
         android:divider="#fff"
-        android:dividerHeight="16dp"/>
+        android:dividerHeight="16dp"
+        android:clickable="false"/>
 
 </LinearLayout>

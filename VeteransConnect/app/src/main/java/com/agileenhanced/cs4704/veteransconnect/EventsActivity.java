@@ -1,5 +1,6 @@
 package com.agileenhanced.cs4704.veteransconnect;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -100,49 +101,6 @@ public class EventsActivity extends AppCompatActivity
 
     public void onClickAddEvent(View view)
     {
-        // TODO: Need a new activity that handles posting new events.
-
-        /*String url = "http://35.245.223.73/service/add-event";
-
-        // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                new Response.Listener<String>()
-                {
-                    @Override
-                    public void onResponse(final String response)
-                    {
-                        if (response.contains("\"status\":\"success\""))
-                        {
-                            Toast.makeText(getApplicationContext(), "Posted Event", Toast.LENGTH_SHORT).show();
-                        } else
-                        {
-                            Toast.makeText(getApplicationContext(), "Failed to post event", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }, new Response.ErrorListener()
-        {
-            @Override
-            public void onErrorResponse(VolleyError error)
-            {
-                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        })
-        {
-            protected Map<String, String> getParams()
-            {
-                Map<String, String> MyData = new HashMap<String, String>();
-                MyData.put("name", "Pickup Street Hockey Match");
-                MyData.put("date", "2019-05-04");
-                MyData.put("time", "15:00");
-                MyData.put("street_address", "535 Blackrock Drive");
-                MyData.put("city", "Blacksburg");
-                MyData.put("state", "VA");
-                MyData.put("zipcode", "24060");
-                return MyData;
-            }
-        };
-
-        // Add the request to the RequestQueue.
-        queue.add(stringRequest);*/
+        startActivity(new Intent(getApplicationContext(), PostEventActivity.class));
     }
 }

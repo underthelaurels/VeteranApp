@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:minHeight="150dp"
-    android:onClick="onClickEmployment"
     android:padding="12dp"
     app:cardCornerRadius="8dp"
     android:elevation="8dp">
