@@ -112,7 +112,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="8dp"
-                            android:text="Find employment and volunteering opportunities specifically available to you"
+                            android:text="Find employment opportunities specifically available to you"
                             android:textColor="#666"
                             android:textSize="14dp" />
 
