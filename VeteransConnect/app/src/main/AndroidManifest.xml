@@ -35,7 +35,9 @@
         <activity android:name=".VolunteeringActivity" />
         <activity android:name=".VolunteeringResultsActivity" />
         <activity android:name=".ChatActivity" />
-        <activity android:name=".ChatSelection"></activity>
+        <activity android:name=".ChatSelection" />
+        <activity android:name=".EventsActivity" />
+        <activity android:name=".PostEventActivity"></activity>
     </application>
 
 </manifest>

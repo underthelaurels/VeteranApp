@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity
     public void onClickEmployment(View v)
     {
         //Toast.makeText(this.getApplicationContext(), "Clicked Employment!", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getApplicationContext(), EmploymentOrVolunteeringActivity.class));
+        startActivity(new Intent(getApplicationContext(), EmploymentActivity.class));
     }
 
     public void onClickDiscounts(View v)
@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity
 
     public void onClickEvents(View v)
     {
-        Toast.makeText(this.getApplicationContext(), "Clicked Events!", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this.getApplicationContext(), "Clicked Events!", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), EventsActivity.class));
     }
 
     public void onClickBenefits(View v)

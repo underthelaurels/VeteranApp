@@ -16,7 +16,6 @@ import java.util.List;
 
 public class MessageAdapter extends BaseAdapter
 {
-
     List<Message> messages = new ArrayList<Message>();
     Context context;
 
