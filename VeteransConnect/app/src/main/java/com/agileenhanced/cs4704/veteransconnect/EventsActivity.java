@@ -13,15 +13,14 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class EventsActivity extends AppCompatActivity
 {
@@ -46,6 +45,11 @@ public class EventsActivity extends AppCompatActivity
 
     private void getEvents()
     {
+
+        final String currDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+
+        // TODO: get the time and compare to the events we get from the database, only keep the ones that haven't already passed
+
         String url = "http://35.245.223.73/service/get-event?all=true";
         JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>()
@@ -74,8 +78,12 @@ public class EventsActivity extends AppCompatActivity
                                     @Override
                                     public void run()
                                     {
-                                        eventAdapter.addEvent(event);
-                                        eventsView.setSelection(0);
+                                        if (compareDates(currDate, event.getDate()))
+                                        {
+                                            eventAdapter.addEvent(event);
+                                            eventsView.setSelection(0);
+                                        }
+
                                     }
                                 });
                             }
@@ -102,5 +110,12 @@ public class EventsActivity extends AppCompatActivity
     public void onClickAddEvent(View view)
     {
         startActivity(new Intent(getApplicationContext(), PostEventActivity.class));
+    }
+
+    public boolean compareDates(String today, String eventDate)
+    {
+        int t = Integer.parseInt(today.replaceAll("-", ""));
+        int ed = Integer.parseInt(eventDate.replaceAll("-", ""));
+        return (ed >= t);
     }
 }
