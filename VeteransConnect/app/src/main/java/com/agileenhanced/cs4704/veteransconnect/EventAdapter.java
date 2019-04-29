@@ -26,6 +26,11 @@ public class EventAdapter extends BaseAdapter
         notifyDataSetChanged();
     }
 
+    public void resetEvents()
+    {
+        this.events.clear();
+    }
+
     @Override
     public int getCount()
     {
