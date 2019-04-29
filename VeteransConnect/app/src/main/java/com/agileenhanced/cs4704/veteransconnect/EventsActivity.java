@@ -40,6 +40,13 @@ public class EventsActivity extends AppCompatActivity
         eventAdapter = new EventAdapter(this);
         eventsView.setAdapter(eventAdapter);
         queue = Volley.newRequestQueue(this);
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        eventAdapter.resetEvents();
         getEvents();
     }
 
