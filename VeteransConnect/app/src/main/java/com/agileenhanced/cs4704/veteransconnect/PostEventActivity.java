@@ -136,7 +136,7 @@ public class PostEventActivity extends AppCompatActivity
         if (eZip.length() != 5)
         {
             valid = false;
-            street.setError("Enter a valid 5-digit zipcode");
+            zipcode.setError("Enter a valid 5-digit zipcode");
         }
 
         return valid;

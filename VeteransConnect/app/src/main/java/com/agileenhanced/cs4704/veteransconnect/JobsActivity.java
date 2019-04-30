@@ -22,42 +22,35 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class EventsActivity extends AppCompatActivity
+public class JobsActivity extends AppCompatActivity
 {
-    private Button addEvent;
-    private ListView eventsView;
-    private EventAdapter eventAdapter;
+    private Button addJob;
+    private ListView jobsView;
+    private JobAdapter jobAdapter;
     private RequestQueue queue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_events);
+        setContentView(R.layout.activity_employment);
 
-        addEvent = (Button) findViewById(R.id.btn_add_event);
-        eventsView = (ListView) findViewById(R.id.jobs_view);
-        eventAdapter = new EventAdapter(this);
-        eventsView.setAdapter(eventAdapter);
+        addJob = (Button) findViewById(R.id.btn_add_job);
+        jobsView = (ListView) findViewById(R.id.jobs_view);
+        jobAdapter = new JobAdapter(this);
+        jobsView.setAdapter(jobAdapter);
         queue = Volley.newRequestQueue(this);
+        getJobs();
     }
 
-    @Override
-    protected void onResume()
-    {
-        super.onResume();
-        eventAdapter.resetEvents();
-        getEvents();
-    }
-
-    private void getEvents()
+    private void getJobs()
     {
 
         final String currDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
         // TODO: get the time and compare to the events we get from the database, only keep the ones that haven't already passed
 
-        String url = "http://35.245.223.73/service/get-event?all=true";
+        String url = "http://35.245.223.73/employment/get-job?all=true";
         JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>()
                 {
@@ -68,27 +61,25 @@ public class EventsActivity extends AppCompatActivity
                         try
                         {
                             // Toast.makeText(getApplicationContext(), response.toString(4), Toast.LENGTH_LONG).show();
-                            JSONArray events = (JSONArray) response.get("events");
-                            for (int i = 0; i < events.length(); i++)
+                            JSONArray jobs = (JSONArray) response.get("jobs");
+                            for (int i = 0; i < jobs.length(); i++)
                             {
-                                JSONObject currObj = events.getJSONObject(i);
-                                final Event event = new Event(
-                                        currObj.getString("name"),
-                                        currObj.getString("date"),
-                                        currObj.getString("time"),
-                                        currObj.getString("street_address"),
-                                        currObj.getString("city"),
-                                        currObj.getString("state"),
-                                        Integer.parseInt(currObj.getString("zipcode")));
+                                JSONObject currObj = jobs.getJSONObject(i);
+                                final Job job = new Job(
+                                        currObj.getString("title"),
+                                        currObj.getString("description"),
+                                        currObj.getString("industry"),
+                                        currObj.getString("dueDate"));
+
                                 runOnUiThread(new Runnable()
                                 {
                                     @Override
                                     public void run()
                                     {
-                                        if (compareDates(currDate, event.getDate()))
+                                        if (compareDates(currDate, job.getDueDate()))
                                         {
-                                            eventAdapter.addEvent(event);
-                                            eventsView.setSelection(0);
+                                            jobAdapter.addJob(job);
+                                            jobsView.setSelection(0);
                                         }
 
                                     }
@@ -114,15 +105,15 @@ public class EventsActivity extends AppCompatActivity
         queue.add(getRequest);
     }
 
-    public void onClickAddEvent(View view)
+    public void onClickAddJob(View view)
     {
-        startActivity(new Intent(getApplicationContext(), PostEventActivity.class));
+        startActivity(new Intent(getApplicationContext(), PostJobActivity.class));
     }
 
-    public boolean compareDates(String today, String eventDate)
+    public boolean compareDates(String today, String jobDate)
     {
         int t = Integer.parseInt(today.replaceAll("-", ""));
-        int ed = Integer.parseInt(eventDate.replaceAll("-", ""));
+        int ed = Integer.parseInt(jobDate.replaceAll("-", ""));
         return (ed >= t);
     }
 }
