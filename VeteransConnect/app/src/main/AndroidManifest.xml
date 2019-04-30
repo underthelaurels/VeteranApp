@@ -27,15 +27,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignupActivity" />
-        <activity android:name=".EmploymentActivity" />
         <activity android:name=".DiscountActivity" />
         <activity android:name=".DiscountResultsActivity" />
-        <activity android:name=".EmploymentOrVolunteeringActivity" />
-        <activity android:name=".EmploymentResultsActivity" />
-        <activity android:name=".VolunteeringActivity" />
-        <activity android:name=".VolunteeringResultsActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".ChatSelection" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".JobsActivity" />
+        <activity android:name=".PostJobActivity" />
         <activity android:name=".EventsActivity" />
         <activity android:name=".PostEventActivity"></activity>
     </application>
