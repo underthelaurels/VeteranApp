@@ -40,15 +40,19 @@ public class JobsActivity extends AppCompatActivity
         jobAdapter = new JobAdapter(this);
         jobsView.setAdapter(jobAdapter);
         queue = Volley.newRequestQueue(this);
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        jobAdapter.resetJobs();
         getJobs();
     }
 
     private void getJobs()
     {
-
         final String currDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-
-        // TODO: get the time and compare to the events we get from the database, only keep the ones that haven't already passed
 
         String url = "http://35.245.223.73/employment/get-job?all=true";
         JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -62,7 +66,6 @@ public class JobsActivity extends AppCompatActivity
                         {
                             Toast.makeText(getApplicationContext(), response.toString(4), Toast.LENGTH_LONG).show();
                             JSONArray jobs = (JSONArray) response.get("jobs");
-                            //Toast.makeText(getApplicationContext(), "Hey:" , Toast.LENGTH_LONG).show();
                             for (int i = 0; i < jobs.length(); i++)
                             {
                                 JSONObject currObj = jobs.getJSONObject(i);

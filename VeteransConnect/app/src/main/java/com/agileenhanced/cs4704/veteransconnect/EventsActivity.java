@@ -52,10 +52,7 @@ public class EventsActivity extends AppCompatActivity
 
     private void getEvents()
     {
-
         final String currDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-
-        // TODO: get the time and compare to the events we get from the database, only keep the ones that haven't already passed
 
         String url = "http://35.245.223.73/service/get-event?all=true";
         JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,

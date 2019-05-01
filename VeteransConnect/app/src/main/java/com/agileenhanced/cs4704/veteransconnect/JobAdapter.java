@@ -26,6 +26,11 @@ public class JobAdapter extends BaseAdapter
         notifyDataSetChanged();
     }
 
+    public void resetJobs()
+    {
+        this.jobs.clear();
+    }
+
     @Override
     public int getCount()
     {
