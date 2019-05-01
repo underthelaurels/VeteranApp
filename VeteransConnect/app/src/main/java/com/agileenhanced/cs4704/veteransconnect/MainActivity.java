@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -19,11 +21,23 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity
 {
 
+    Button update_profile_Button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        update_profile_Button = (Button) findViewById(R.id.button_my_profile);
+        update_profile_Button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+            }
+        });
     }
 
     public void onClickVetConnect(View v)
@@ -35,7 +49,7 @@ public class MainActivity extends AppCompatActivity
     public void onClickEmployment(View v)
     {
         //Toast.makeText(this.getApplicationContext(), "Clicked Employment!", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getApplicationContext(), EmploymentActivity.class));
+        startActivity(new Intent(getApplicationContext(), JobsActivity.class));
     }
 
     public void onClickDiscounts(View v)

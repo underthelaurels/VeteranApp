@@ -17,6 +17,14 @@
         android:textStyle="bold"
         android:elevation="12dp"/>
 
+    <Button
+        android:id="@+id/button_my_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Profile"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold" />
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
