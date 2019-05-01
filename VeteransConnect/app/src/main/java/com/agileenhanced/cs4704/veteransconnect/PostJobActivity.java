@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -23,6 +22,11 @@ public class PostJobActivity extends AppCompatActivity
     private EditText description;
     private EditText industry;
     private EditText dueDate;
+    private EditText address;
+    private EditText city;
+    private EditText state;
+    private EditText zip;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -33,6 +37,10 @@ public class PostJobActivity extends AppCompatActivity
         description = (EditText) findViewById(R.id.input_job_description);
         industry = (EditText) findViewById(R.id.input_job_industry);
         dueDate = (EditText) findViewById(R.id.input_job_due_date);
+        address = (EditText) findViewById(R.id.input_job_address);
+        city = (EditText) findViewById(R.id.input_job_city);
+        state = (EditText) findViewById(R.id.input_job_state);
+        zip = (EditText) findViewById(R.id.input_job_zip);
     }
 
     public void onClickPost(View view)
@@ -74,6 +82,10 @@ public class PostJobActivity extends AppCompatActivity
                     MyData.put("description", description.getText().toString());
                     MyData.put("industry", industry.getText().toString());
                     MyData.put("dueDate", dueDate.getText().toString());
+                    MyData.put("address", address.getText().toString());
+                    MyData.put("city", city.getText().toString());
+                    MyData.put("state", state.getText().toString());
+                    MyData.put("zip", zip.getText().toString());
                     return MyData;
                 }
            };
@@ -90,6 +102,11 @@ public class PostJobActivity extends AppCompatActivity
         String jDescription = description.getText().toString();
         String jIndustry = industry.getText().toString();
         String jDueDate = dueDate.getText().toString();
+        String jAddress = address.getText().toString();
+        String jCity = city.getText().toString();
+        String jState = state.getText().toString();
+        String jZip = zip.getText().toString();
+
 
         if (jTitle.isEmpty())
         {
@@ -111,6 +128,27 @@ public class PostJobActivity extends AppCompatActivity
         {
             valid = false;
             industry.setError("Enter a valid industry");
+        }
+        if (jAddress.isEmpty())
+        {
+            valid = false;
+            address.setError("Enter a valid address");
+        }
+        if (jCity.isEmpty())
+        // Add more error checking for date eventually
+        {
+            valid = false;
+            city.setError("Enter a valid city");
+        }
+        if (jState.isEmpty())
+        {
+            valid = false;
+            state.setError("Enter a valid state");
+        }
+        if (jZip.isEmpty())
+        {
+            valid = false;
+            zip.setError("Enter a valid zip");
         }
 
         return valid;

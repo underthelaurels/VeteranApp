@@ -7,81 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbf6b42d-ca25-4262-9bd1-534d8f520740" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_android_28.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_collections_28_0_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_28_0_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_9_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_9_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_databind_2_9_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_6_1_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_scaledrone_scaledrone_java_0_6_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_9_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_13_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/Job.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/JobAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/JobsActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/PostJobActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/ProfileActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_post_job.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_profile.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/job_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/EmploymentActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/EmploymentResultsActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/EventsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/EventsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/PostEventActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/PostEventActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_employment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_employment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_events.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_events.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/Job.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/JobsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/JobsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/PostJobActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/PostJobActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_post_job.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_post_job.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/JobAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-289">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="296">
+              <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,20 +59,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/JobsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="784">
-              <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+            <state relative-caret-position="130">
+              <caret line="48" column="61" lean-forward="true" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1728#3991#0" expanded="true" />
+                <element signature="e#3061#3768#0" expanded="true" />
+                <element signature="e#3767#3768#0" expanded="true" />
+                <element signature="e#3990#3991#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/PostJobActivity.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/PostEventActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-387">
-              <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+            <state relative-caret-position="617">
+              <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,12 +85,67 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/Job.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/Event.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="-571">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding>
+                <element signature="e#686#687#0" expanded="true" />
+                <element signature="e#713#714#0" expanded="true" />
+                <element signature="e#748#749#0" expanded="true" />
+                <element signature="e#775#776#0" expanded="true" />
+                <element signature="e#810#811#0" expanded="true" />
+                <element signature="e#837#838#0" expanded="true" />
+                <element signature="e#874#875#0" expanded="true" />
+                <element signature="e#903#904#0" expanded="true" />
+                <element signature="e#938#939#0" expanded="true" />
+                <element signature="e#965#966#0" expanded="true" />
+                <element signature="e#1001#1002#0" expanded="true" />
+                <element signature="e#1029#1030#0" expanded="true" />
+                <element signature="e#1064#1065#0" expanded="true" />
+                <element signature="e#1094#1095#0" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/EventAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-399">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/EventsActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/PostJobActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_post_job.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -186,14 +176,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/EmploymentResultsActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/Job.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/JobsActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/activity_post_job.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/Job.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/PostJobActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/activity_post_job.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-11" />
     <option name="width" value="1100" />
     <option name="height" value="1391" />
@@ -205,7 +195,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
@@ -230,12 +219,31 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="veteransconnect" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="EventAdapter.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="app" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="veteransconnect" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="JobAdapter.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="app" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="app" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -380,11 +388,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="733" height="927" extended-state="0" />
+    <frame x="-7" y="-7" width="1455" height="935" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.42793462" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19784947" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -397,9 +405,9 @@
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="5" sideWeight="0.5022288" side_tool="true" visible="true" weight="0.315508" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5032258" side_tool="true" visible="true" weight="0.31538463" />
       <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49777117" visible="true" weight="0.315508" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4967742" visible="true" weight="0.31538463" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -443,39 +451,6 @@
         <state relative-caret-position="-100" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="58" lean-forward="true" selection-end-line="58" />
-          <folding>
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
-            <element signature="e#748#749#0" expanded="true" />
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
-            <element signature="e#837#838#0" expanded="true" />
-            <element signature="e#874#875#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#938#939#0" expanded="true" />
-            <element signature="e#965#966#0" expanded="true" />
-            <element signature="e#1001#1002#0" expanded="true" />
-            <element signature="e#1029#1030#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/EventAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="70" column="2" selection-end-line="70" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/ProfileActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -513,10 +488,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/EmploymentResultsActivity.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/EmploymentActivity.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/job_layout.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
@@ -542,18 +513,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_post_job.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_post_event.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/job_layout.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/JobAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="65" column="6" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/JobsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="48" column="61" lean-forward="true" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1728#3991#0" expanded="true" />
+            <element signature="e#3061#3768#0" expanded="true" />
+            <element signature="e#3767#3768#0" expanded="true" />
+            <element signature="e#3990#3991#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/Job.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/PostEventActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state relative-caret-position="617">
           <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-571">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#748#749#0" expanded="true" />
+            <element signature="e#775#776#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+            <element signature="e#965#966#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1029#1030#0" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
+            <element signature="e#1094#1095#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/EventAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -570,42 +605,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/Job.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/JobAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-289">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/JobsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="784">
-          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/agileenhanced/cs4704/veteransconnect/PostJobActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-387">
-          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_post_job.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
