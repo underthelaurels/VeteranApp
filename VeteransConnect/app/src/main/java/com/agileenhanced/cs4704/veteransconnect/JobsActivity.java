@@ -54,7 +54,7 @@ public class JobsActivity extends AppCompatActivity
     {
         final String currDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
-        String url = "http://35.245.223.73/employment/get-job?all=true";
+        String url = "http://35.245.223.73/employment/all";
         JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>()
                 {
@@ -64,7 +64,7 @@ public class JobsActivity extends AppCompatActivity
                         // display response
                         try
                         {
-                            Toast.makeText(getApplicationContext(), response.toString(4), Toast.LENGTH_LONG).show();
+                            // Toast.makeText(getApplicationContext(), response.toString(4), Toast.LENGTH_LONG).show();
                             JSONArray jobs = (JSONArray) response.get("jobs");
                             for (int i = 0; i < jobs.length(); i++)
                             {

@@ -64,7 +64,7 @@ public class EventsActivity extends AppCompatActivity
                         // display response
                         try
                         {
-                            Toast.makeText(getApplicationContext(), response.toString(4), Toast.LENGTH_LONG).show();
+                            // Toast.makeText(getApplicationContext(), response.toString(4), Toast.LENGTH_LONG).show();
                             JSONArray events = (JSONArray) response.get("events");
                             for (int i = 0; i < events.length(); i++)
                             {
