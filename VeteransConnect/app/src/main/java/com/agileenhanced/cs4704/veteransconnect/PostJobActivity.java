@@ -59,7 +59,6 @@ public class PostJobActivity extends AppCompatActivity
                         {
                             if (response.contains("\"status\":\"success\""))
                             {
-                                Toast.makeText(getApplicationContext(), "I WORKED", Toast.LENGTH_SHORT).show();
                                 onSubmitSuccess();
                             } else
                             {
@@ -81,11 +80,11 @@ public class PostJobActivity extends AppCompatActivity
                     MyData.put("title", title.getText().toString());
                     MyData.put("description", description.getText().toString());
                     MyData.put("industry", industry.getText().toString());
-                    MyData.put("dueDate", dueDate.getText().toString());
-                    MyData.put("address", address.getText().toString());
+                    MyData.put("due_date", dueDate.getText().toString());
+                    MyData.put("street_address", address.getText().toString());
                     MyData.put("city", city.getText().toString());
                     MyData.put("state", state.getText().toString());
-                    MyData.put("zip", zip.getText().toString());
+                    MyData.put("zipcode", zip.getText().toString());
                     return MyData;
                 }
            };
@@ -106,7 +105,6 @@ public class PostJobActivity extends AppCompatActivity
         String jCity = city.getText().toString();
         String jState = state.getText().toString();
         String jZip = zip.getText().toString();
-
 
         if (jTitle.isEmpty())
         {
@@ -132,23 +130,22 @@ public class PostJobActivity extends AppCompatActivity
         if (jAddress.isEmpty())
         {
             valid = false;
-            address.setError("Enter a valid address");
+            address.setError("Enter a valid street address");
         }
         if (jCity.isEmpty())
-        // Add more error checking for date eventually
         {
             valid = false;
-            city.setError("Enter a valid city");
+            city.setError("Enter a valid city name");
         }
-        if (jState.isEmpty())
+        if (jState.length() != 2)
         {
             valid = false;
-            state.setError("Enter a valid state");
+            state.setError("Enter a valid 2-letter state abbreviation");
         }
-        if (jZip.isEmpty())
+        if (jZip.length() != 5)
         {
             valid = false;
-            zip.setError("Enter a valid zip");
+            zip.setError("Enter a valid 5-digit zipcode");
         }
 
         return valid;

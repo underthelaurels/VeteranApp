@@ -60,8 +60,9 @@ public class JobsActivity extends AppCompatActivity
                         // display response
                         try
                         {
-                            // Toast.makeText(getApplicationContext(), response.toString(4), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), response.toString(4), Toast.LENGTH_LONG).show();
                             JSONArray jobs = (JSONArray) response.get("jobs");
+                            //Toast.makeText(getApplicationContext(), "Hey:" , Toast.LENGTH_LONG).show();
                             for (int i = 0; i < jobs.length(); i++)
                             {
                                 JSONObject currObj = jobs.getJSONObject(i);
@@ -69,11 +70,11 @@ public class JobsActivity extends AppCompatActivity
                                         currObj.getString("title"),
                                         currObj.getString("description"),
                                         currObj.getString("industry"),
-                                        currObj.getString("dueDate"),
-                                        currObj.getString("address"),
+                                        currObj.getString("due_date"),
+                                        currObj.getString("street_address"),
                                         currObj.getString("city"),
                                         currObj.getString("state"),
-                                        currObj.getString("zip"));
+                                        currObj.getString("zipcode"));
 
 
                                 runOnUiThread(new Runnable()
