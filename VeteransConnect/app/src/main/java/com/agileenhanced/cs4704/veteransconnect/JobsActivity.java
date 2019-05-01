@@ -33,7 +33,7 @@ public class JobsActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_employment);
+        setContentView(R.layout.activity_jobs);
 
         addJob = (Button) findViewById(R.id.btn_add_job);
         jobsView = (ListView) findViewById(R.id.jobs_view);
@@ -55,6 +55,7 @@ public class JobsActivity extends AppCompatActivity
         final String currDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
         String url = "http://35.245.223.73/employment/all";
+
         JsonObjectRequest getRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>()
                 {
