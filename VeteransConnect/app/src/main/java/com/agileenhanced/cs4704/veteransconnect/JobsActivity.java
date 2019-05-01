@@ -69,18 +69,25 @@ public class JobsActivity extends AppCompatActivity
                                         currObj.getString("title"),
                                         currObj.getString("description"),
                                         currObj.getString("industry"),
-                                        currObj.getString("dueDate"));
+                                        currObj.getString("dueDate"),
+                                        currObj.getString("address"),
+                                        currObj.getString("city"),
+                                        currObj.getString("state"),
+                                        currObj.getString("zip"));
+
 
                                 runOnUiThread(new Runnable()
                                 {
                                     @Override
                                     public void run()
                                     {
-                                        if (compareDates(currDate, job.getDueDate()))
-                                        {
-                                            jobAdapter.addJob(job);
-                                            jobsView.setSelection(0);
-                                        }
+                                        jobAdapter.addJob(job);
+                                        jobsView.setSelection(0);
+                                        //if (compareDates(currDate, job.getDueDate()))
+                                        //{
+                                        //    jobAdapter.addJob(job);
+                                         //   jobsView.setSelection(0);
+                                        //}
 
                                     }
                                 });
